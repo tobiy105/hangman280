@@ -11,13 +11,10 @@ def main():
     word = select_random_word(word_list)
 
     print("Enter a letter: ")
-    guess = input().lower()  
+    guess = input()
 
     if is_valid_guess(guess):
-        if guess in word:
-            print("Good guess!")
-        else:
-            print("Oops! That letter is not in the word.")
+        print("Good guess!") 
     else:
         print("Oops! That is not a valid input.")
 
