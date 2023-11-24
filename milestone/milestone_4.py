@@ -52,7 +52,6 @@ class Hangman:
             exit()
         print(f"Lives left: {self.num_lives}")
 
-
 def main():
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry']
     game = Hangman(word_list, num_lives=5)
