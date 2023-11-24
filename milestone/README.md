@@ -22,6 +22,8 @@ By working on this project, I learnt:
 - Creating a Hangman game loop.
 - Validating user input for single alphabetical characters.
 - Checking if a guessed letter is in the secret word.
+- Reducing the number of lives for incorrect guesses.
+- Updating the word_guessed display with correct guesses.
 - Organizing code into functions for better modularity.
 
 ## Installation
@@ -33,12 +35,15 @@ To run the game on your local machine, follow these installation instructions:
 2. Navigate to the project directory:
    ```bash
    cd milestone
-3. Run the game by executing the following command:
+3. Run the game at its first milestone by executing the following command:
    ```bash
    python milestone_2.py
-3. Run the game by executing the following command:
+3. Run the game at its second milestone by executing the following command:
    ```bash
    python milestone_3.py
+4. Run the game at its third milestone by executing the following command:
+   ```bash
+   python milestone_4.py
 
 ## Usage
 Once the game is running, you can play it by following these steps:
