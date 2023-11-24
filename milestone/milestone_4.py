@@ -16,17 +16,15 @@ class Hangman:
     def is_valid_letter_guess(guess):
         return len(guess) == 1 and guess.isalpha()
 
-    def select_random_word(word_list):
-        return random.choice(word_list)
-
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
             self.update_word_guessed(guess)
         else:
-            print(f"Sorry, {guess} is not in the word. Try again.")
             self.num_lives -= 1
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")
         
     def ask_for_input(self):
         while self.num_lives > 0:
