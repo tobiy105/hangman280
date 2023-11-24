@@ -10,7 +10,6 @@ def is_guess_correct(word, guess):
 def is_valid_letter_guess(guess):
     return len(guess) == 1 and guess.isalpha()
 
-
 def main():
     secret_word = "apple"
     while True:
