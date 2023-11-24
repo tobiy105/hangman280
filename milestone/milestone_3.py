@@ -10,8 +10,6 @@ def is_guess_correct(word, guess):
 def is_valid_letter_guess(guess):
     return len(guess) == 1 and guess.isalpha()
 
-def print_message(message):
-    print(message)
 
 def main():
     secret_word = "apple"
@@ -20,12 +18,12 @@ def main():
 
         if is_valid_letter_guess(guess):
             if is_guess_correct(secret_word, guess):
-                print_message(f"Good guess! {guess} is in the word.")
+                print(f"Good guess! {guess} is in the word.")
                 break
             else:
-                print_message(f"Sorry, {guess} is not in the word. Try again.")
+                print(f"Sorry, {guess} is not in the word. Try again.")
         else:
-            print_message("Invalid letter. Please, enter a single alphabetical character.")
+            print("Invalid letter. Please, enter a single alphabetical character.")
 
 if __name__ == "__main__":
     main()
