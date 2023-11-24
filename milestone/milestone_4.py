@@ -5,12 +5,11 @@ class Hangman:
     def __init__(self, word_list, num_lives=5):
         self.word = random.choice(word_list)
         self.word_guessed = ['_' for _ in range(len(self.word))]
-        self.num_letters = len(self.word)
         self.num_lives = num_lives
         self.list_of_guesses = []
 
-        print(f"The mystery word has {self.num_letters} characters")
-        print(self.word_guessed)
+        print(f"The mystery word has {len(self.word)} characters")
+        print(" ".join(self.word_guessed))
 
     @staticmethod
     def is_valid_letter_guess(guess):
@@ -19,13 +18,19 @@ class Hangman:
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
-            print(f"Good guess! {guess} is in the word.")
-            self.update_word_guessed(guess)
+            self.handle_correct_guess(guess)
         else:
-            self.num_lives -= 1
-            print(f"Sorry, {guess} is not in the word.")
-            print(f"You have {self.num_lives} lives left.")
-        
+            self.handle_incorrect_guess(guess)
+
+    def handle_correct_guess(self, guess):
+        print(f"Good guess! {guess} is in the word.")
+        self.update_word_guessed(guess)
+
+    def handle_incorrect_guess(self, guess):
+        self.num_lives -= 1
+        print(f"Sorry, {guess} is not in the word.")
+        print(f"You have {self.num_lives} lives left.")
+
     def ask_for_input(self):
         while self.num_lives > 0:
             print("Guess a letter: ")
@@ -41,14 +46,13 @@ class Hangman:
                 self.check_guess(guess)
 
     def update_word_guessed(self, guess):
-        for i in range(len(self.word)):
-            if self.word[i] == guess:
-                self.word_guessed[i] = guess
+        self.word_guessed = [char if char == guess or self.word_guessed[i] == guess else self.word_guessed[i] for i, char in enumerate(self.word)]
         print("Word guessed so far:", " ".join(self.word_guessed))
         if "_" not in self.word_guessed:
             print("Congratulations! You've guessed the word.")
             exit()
         print(f"Lives left: {self.num_lives}")
+
 
 def main():
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry']
