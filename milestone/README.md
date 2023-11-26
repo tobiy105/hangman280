@@ -38,12 +38,15 @@ To run the game on your local machine, follow these installation instructions:
 3. Run the game at its first milestone by executing the following command:
    ```bash
    python milestone_2.py
-3. Run the game at its second milestone by executing the following command:
+4. Run the game at its second milestone by executing the following command:
    ```bash
    python milestone_3.py
-4. Run the game at its third milestone by executing the following command:
+5. Run the game at its third milestone by executing the following command:
    ```bash
    python milestone_4.py
+6. Run the game at its fourth milestone by executing the following command:
+   ```bash
+   python milestone_5.py
 
 ## Usage
 Once the game is running, you can play it by following these steps:
@@ -59,11 +62,13 @@ Once the game is running, you can play it by following these steps:
 
 The project file structure is as follows:
 
-- milestone_2.py: Contains the Python code for the "Guess the Word" game.
-- README.md: This documentation file.
+- **milestone/**
+   - milestone_2.py: The Python code for creating variables for the Hangman game.
+   - milestone_3.py: Contains the Python code for checking if the character is in the word.
+   - milestone_4.py: Contains the Python code for the Hangman game class.
+   - milestone_5.py: Contains the Python code combining and running the Hangman game.
+   - README.md: This documentation file.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
+This project is licensed under the MIT License.
