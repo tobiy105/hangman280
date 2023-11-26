@@ -11,7 +11,6 @@ class Hangman:
         print(f"The mystery word has {len(self.word)} characters")
         print(" ".join(self.word_guessed))
 
-    @staticmethod
     def is_valid_letter_guess(guess):
         return len(guess) == 1 and guess.isalpha()
 
@@ -49,7 +48,6 @@ class Hangman:
         self.word_guessed = [char if char == guess or self.word_guessed[i] == guess else self.word_guessed[i] for i, char in enumerate(self.word)]
         print("Word guessed so far:", " ".join(self.word_guessed))
         if "_" not in self.word_guessed:
-            print("Congratulations! You've guessed the word.")
             exit()
         print(f"Lives left: {self.num_lives}")
 
